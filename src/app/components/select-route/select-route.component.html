@@ -1,0 +1,53 @@
+<div class="select_container">
+        <div class="selectFormCtrl">
+            <div class="from-to">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5.90909C12 9.72727 7 13 7 13C7 13 2 9.72727 2 5.90909C2 4.60712 2.52678 3.35847 3.46447 2.43784C4.40215 1.51721 5.67392 1 7 1C8.32608 1 9.59785 1.51721 10.5355 2.43784C11.4732 3.35847 12 4.60712 12 5.90909Z" stroke="#10108D" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 7C7.55228 7 8 6.55228 8 6C8 5.44772 7.55228 5 7 5C6.44772 5 6 5.44772 6 6C6 6.55228 6.44772 7 7 7Z" stroke="#10108D" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                <mat-form-field class="form-field-from">
+                    <input matInput type="text" placeholder="From" [(ngModel)]="from">
+                    <button mat-button *ngIf="from" matSuffix mat-icon-button aria-label="Clear" (click)="from=''">
+                      <mat-icon>x</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <br>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.75 6.41797L12.8333 1.16797L7.58333 12.2513L6.41667 7.58464L1.75 6.41797Z" stroke="#10108D" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+                  <mat-form-field class="form-field-to">
+                    <input matInput type="text" placeholder="To" [(ngModel)]="to">
+                    <button mat-button *ngIf="to" matSuffix mat-icon-button aria-label="Clear" (click)="to=''">
+                      <mat-icon>x</mat-icon>
+                    </button>
+                  </mat-form-field>
+            </div>
+            <br>
+            <div class="btn-viewRoute">
+            <button mat-stroked-button color="primary" (click)="view()" >View Route</button>
+            </div>  
+            <br>
+            
+            <div class="route-container">
+              <div *ngFor="let route of routes" class="container-external">
+                  <div (click)="popularRoutes(route)" class="container-inside">
+                      <div>
+                          <div class="name-label">{{route.routeName}}</div>
+                          <div class="stops-label">{{route.stops}} stops</div>
+                      </div>
+                      <div>
+                          <div class="distance-label">{{route.distance}} KM</div>
+                          <div class="time-label">{{route.time}}</div>
+                      </div>
+                  </div>
+                  <div class="line"></div>
+              </div>
+          </div>
+      
+            </div>
+
+        </div>
+
+
+

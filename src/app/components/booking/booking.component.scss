@@ -1,0 +1,100 @@
+.create-trip-booking-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #10108d;
+  }
+  .pricing-container {
+    display: flex;
+    flex-direction: column;
+
+    .pricing-icon-label-container {
+      display: flex;
+      gap: 4px;
+    }
+
+     ::ng-deep .pricing-input .mat-form-field-flex {
+      border: 1px solid #c2c7d6;
+      border-radius: 12px;
+    }
+    
+      ::ng-deep
+      .mat-form-field-appearance-legacy
+      .mat-form-field-underline {
+      height: 0px;
+    }
+  }
+
+  .stops-icon-label-container {
+    display: flex;
+    gap: 4px;
+  }
+
+  .stop-table-container {
+    height: 200px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+    }
+  }
+
+  .booking-container {
+    .booking-time-icon-label-container {
+      display: flex;
+      gap: 4px;
+    }
+
+    :host
+      ::ng-deep
+      .booking-time-input
+      .mat-form-field-type-mat-select:not(.mat-form-field-disabled)
+      .mat-form-field-flex {
+      // border: 1px solid #c2c7d6;
+      // border-radius: 12px;
+      // // background: #ffffff;
+      // padding: 0.62vw 1vw;
+      // width: 25.6vw;
+      // height: 2.5vw;
+      // color: black;
+    }
+
+    .dropdown-container-label {
+      display: flex;
+      background-color: white;
+      justify-content: space-between;
+    }
+  }
+
+  .platform-container {
+    display: flex;
+    flex-direction: column;
+
+    .icon-label-header {
+      display: flex;
+      gap: 4px;
+    }
+    .checkbox-container {
+      display: flex;
+      flex-direction: column;
+
+      ::ng-deep
+        .mat-checkbox-checked.mat-accent
+        .mat-checkbox-ripple
+        .mat-ripple-element {
+        opacity: 0.03;
+        background-color: #0b0b60;
+      }
+
+      ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+      .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #0b0b60;
+      }
+    }
+  }
+}

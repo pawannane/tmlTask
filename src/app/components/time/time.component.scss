@@ -1,0 +1,60 @@
+.start-end-flex{
+    display:flex;
+    justify-content: space-between;
+    
+}
+.two-input-container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+
+  .week-container{
+    display: flex;
+    margin-top: 0.6vw;
+    // background-color: #10108D;
+    width: 16vw;
+    justify-content: space-between;
+
+    .week-round-selected-container,
+    .week-round-unselected-container {
+        border-radius: 2vw;
+        height: 1.7vw;
+        width: 1.7vw;
+        font-size: 0.75vw;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .week-round-selected-container{
+        background-color: #0B0B60;
+        
+        
+        color: white;
+    }
+
+    .week-round-unselected-container{
+        background-color: #F3F4F7;
+        
+        
+    }
+}
+

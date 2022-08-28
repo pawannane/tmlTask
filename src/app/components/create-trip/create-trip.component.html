@@ -1,0 +1,65 @@
+<div class="create-trip-main-container">
+  <div class="create-trip-first-col">
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+      <!-- Select Component -->
+      <mat-step>
+        <form>
+          <ng-template matStepLabel>Select</ng-template>
+          <app-select-route></app-select-route>
+          <br />
+          <div class="btn-nxt">
+            <button mat-button matStepperNext>Continue</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <!-- Time Component -->
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Time</ng-template>
+          <app-time></app-time>
+          <div class="btn">
+            <div class="draft">
+              <button mat-button matStepperPrevious>Save as Draft</button>
+            </div>
+            <div class="btn-next">
+              <button mat-button matStepperNext>Continue</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+
+      <!-- Catagory/Bus Component -->
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Catagory/Bus</ng-template>
+          <app-catagory-bus></app-catagory-bus>
+          <div class="btn">
+            <div class="draft">
+              <button mat-button matStepperPrevious>Save as Draft</button>
+            </div>
+            <div class="btn-next">
+              <button mat-button matStepperNext>Continue ></button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <!-- Booking Component -->
+      <mat-step>
+        <form>
+          <ng-template matStepLabel>Booking</ng-template>
+          <booking></booking>
+          <div class="btn">
+            <div class="draft">
+              <button mat-button matStepperPrevious>Save as Draft</button>
+            </div>
+            <div class="btn-next">
+              <button mat-button (click)="stepper.reset()">Continue ></button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+  <div class="create-trip-second-col"></div>
+</div>

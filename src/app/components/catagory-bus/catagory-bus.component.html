@@ -1,0 +1,112 @@
+<!-- <p>catagory-bus works!</p> -->
+<div class="create-trip-catagory-container">
+    <div class="expansion">
+
+
+        <mat-accordion class="expansion-component">
+
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Monday
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <h4>
+                    <span class="material-icons">
+              airline_seat_recline_extra
+              </span>Bus class</h4>
+                <mat-form-field>
+                    <mat-label>select</mat-label>
+                    <mat-select [(ngModel)]="selectedValue" name="classbus" id="select1" class="select" (change)="onbusclassselect($event)">
+                        <mat-option *ngFor="let classbus of buses" [value]="classbus.value">
+                            {{classbus.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <h4><span class="material-icons">
+                directions_bus
+                </span>Bus</h4>
+                    <!-- <mat-label>Bus</mat-label> -->
+                    <mat-select [(ngModel)]="selectedbus" name="busesselect" id="select2" class="select" (change)="onbusselect">
+                        <mat-option *ngFor="let bus of busesselected" [value]="bus.value">
+                            {{bus.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <h4><span class="material-icons">
+                person_2
+                </span>driver</h4>
+                    <!-- <mat-label>Bus</mat-label> -->
+                    <mat-select [(ngModel)]="selecteddriver" name="driver" id="select3" class="select" (change)="ondriverselect">
+                        <mat-option *ngFor="let driver of driverselected" [value]="driver.value">
+                            {{driver.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+
+                <!-- <p>I'm visible because I am open</p> -->
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <mat-accordion class="expansion-component">
+
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Tuesday
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <h4>
+                    <span class="material-icons">
+              airline_seat_recline_extra
+              </span>Bus class</h4>
+                <mat-form-field>
+                    <mat-label>select</mat-label>
+                    <mat-select [(ngModel)]="selectedValue" name="classbus" id="select1" class="select" (change)="onbusclassselect($event)">
+                        <mat-option *ngFor="let classbus of buses" [value]="classbus.value">
+                            {{classbus.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <h4><span class="material-icons">
+                directions_bus
+                </span>Bus</h4>
+                    <!-- <mat-label>Bus</mat-label> -->
+                    <mat-select [(ngModel)]="selectedbus" name="busesselect" id="select2" class="select" (change)="onbusselect">
+                        <mat-option *ngFor="let bus of busesselected" [value]="bus.value">
+                            {{bus.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <h4><span class="material-icons">
+                person_2
+                </span>driver</h4>
+                    <!-- <mat-label>Bus</mat-label> -->
+                    <mat-select [(ngModel)]="selecteddriver" name="driver" id="select3" class="select" (change)="ondriverselect">
+                        <mat-option *ngFor="let driver of driverselected" [value]="driver.value">
+                            {{driver.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+
+                <!-- <p>I'm visible because I am open</p> -->
+            </mat-expansion-panel>
+        </mat-accordion>
+
+
+
+    </div>
+
+</div>

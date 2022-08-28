@@ -1,0 +1,44 @@
+.select_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field-from, .form-field-to {
+    width: 255px;
+  }
+
+.btn-viewRoute{
+    display: flex;
+    justify-content: right;
+}
+
+.container-external{
+    border-radius: 5px;
+    border: 1px solid gray;
+
+    // padding: 0.5vw;
+    // overflow: auto;
+    .container-inside{
+        padding: 0.5vw;
+        display: flex;
+        justify-content: space-between;
+        .name-label .distance-label{
+            font-size: 15px;
+            font-weight:bold;
+            color: #414962;
+        }
+        .stops-label .time-label{
+            // padding-top: 0.62vw;
+            font-size: 8px;
+            font-weight: 300;
+            color: #414962;
+        }
+    }
+    .line{
+        height: 0.0625vw;
+        width: 100%;
+        background-color: #DADDE6;
+    }
+}

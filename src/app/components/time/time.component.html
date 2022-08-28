@@ -1,0 +1,46 @@
+<h1>Set time to start the trip</h1>
+<div class="create-trip-time-container">
+    <div class="time">
+        <div class="two-input-container">
+            <mat-form-field appearance="outline" class="input-container">
+                <input matInput placeholder="09:00" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-container">
+                <input matInput placeholder="AM" />
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="weeks">
+        <h4>Repeat On</h4>
+        <div class="week-container">
+            <div *ngFor="let item of week;let i=index;" (click)="selectedDay(i,item)">
+                <div [ngClass]="changeColor[i]  ? 'week-round-selected-container' : 'week-round-unselected-container'">
+                    {{item.weekLabel}}</div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="start-end-trip">
+        <div class="start-end-flex">
+            <div class="two-input-container">
+                <h4>Start Trip</h4>
+                <mat-form-field appearance="outline" class="input-container">
+                    <input matInput placeholder="09:00" />
+                </mat-form-field>
+                <h4>End Trip</h4>
+                <mat-form-field appearance="outline" class="input-container">
+                    <input matInput placeholder="AM" />
+                </mat-form-field>
+            </div>
+            <div class="result">
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">
+                        No end date
+                    </mat-checkbox>
+                </section>
+            </div>
+        </div>
+
+    </div>
+</div>

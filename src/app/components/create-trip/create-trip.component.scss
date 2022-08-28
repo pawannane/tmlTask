@@ -1,0 +1,72 @@
+.create-trip-main-container {
+  display: flex;
+
+  gap: 27px;
+
+  .create-trip-first-col {
+    padding: 32px, 40px, 32px, 40px;
+    display: flex;
+    flex-direction: column;
+
+
+    border-radius: 5px;
+
+    .mat-stepper-horizontal {
+      margin-top: 8px;
+    }
+
+    .mat-form-field {
+      margin-top: 16px;
+    }
+
+    .btn-nxt {
+      display: flex;
+      justify-content: center;
+      background-color: #0B0B60;
+      color: #EFEFEF;
+      border-radius: 5px;
+
+    }
+
+    .btn {
+      display: flex;
+      justify-content: space-around;
+
+      .draft {
+        display: flex;
+        justify-content: center;
+        color: #0B0B60;
+        border-radius: 10px;
+      }
+
+      .btn-next {
+        display: flex;
+        justify-content: center;
+        background-color: #0B0B60;
+        color: #EFEFEF;
+      border-radius: 10px;
+    
+
+      }
+    }
+
+  }
+
+  .create-trip-second-col {
+    display: flex;
+    flex-direction: column;
+    // max-width:fit-content;
+    background-color: #EFEFEF;
+    flex-grow: 2;
+
+  }
+}
+
+:host {
+  ::ng-deep {
+    .mat-step-icon-content {
+      display: none;
+
+    }
+  }
+}

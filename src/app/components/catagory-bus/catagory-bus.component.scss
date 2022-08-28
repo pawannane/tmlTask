@@ -1,0 +1,23 @@
+// .mat-form-field+.mat-form-field {
+//     // margin-left: 10px;
+// }
+
+.expansion {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .expansion-component {
+        width: 382px;
+        align-items: center;
+        // .select {}
+    }
+}
+
+.mat-expansion-panel-body {
+    display: flex !important;
+}
+
+.material-icons {
+    color: rgb(86, 124, 226);
+}

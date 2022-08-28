@@ -1,0 +1,173 @@
+<form class="create-trip-booking-container" [formGroup]="bookingForm">
+  <div class="pricing-container">
+    <div class="pricing-icon-label-container">
+      <div class="icon">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 5.90909C12 9.72727 7 13 7 13C7 13 2 9.72727 2 5.90909C2 4.60712 2.52678 3.35847 3.46447 2.43784C4.40215 1.51721 5.67392 1 7 1C8.32608 1 9.59785 1.51721 10.5355 2.43784C11.4732 3.35847 12 4.60712 12 5.90909Z"
+            stroke="#3B96F3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7 7C7.55228 7 8 6.55228 8 6C8 5.44772 7.55228 5 7 5C6.44772 5 6 5.44772 6 6C6 6.55228 6.44772 7 7 7Z"
+            stroke="#3B96F3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="label">Pricing</div>
+    </div>
+    <div class="pricing-input">
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          id="pricing"
+          class="example-right-align"
+          name="pricing"
+          [formControl]="Pricing"
+        />
+        <div class="suffix-input-label" matSuffix>per km</div>
+        <mat-error *ngIf="Pricing.hasError('required')">
+          Pricing is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="stops-container">
+    <div class="stops-icon-label-container">
+      <div class="icon">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 5.90909C12 9.72727 7 13 7 13C7 13 2 9.72727 2 5.90909C2 4.60712 2.52678 3.35847 3.46447 2.43784C4.40215 1.51721 5.67392 1 7 1C8.32608 1 9.59785 1.51721 10.5355 2.43784C11.4732 3.35847 12 4.60712 12 5.90909Z"
+            stroke="#3B96F3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7 7C7.55228 7 8 6.55228 8 6C8 5.44772 7.55228 5 7 5C6.44772 5 6 5.44772 6 6C6 6.55228 6.44772 7 7 7Z"
+            stroke="#3B96F3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="label">Stops</div>
+    </div>
+    <div class="stop-table-container">
+      <table mat-table [dataSource]="dataSource">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>Stoppage</th>
+          <td mat-cell *matCellDef="let element">{{ element.Stoppage }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Time</th>
+          <td mat-cell *matCellDef="let element">{{ element.Time }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef>Stoppage2</th>
+          <td mat-cell *matCellDef="let element">{{ element.Stoppage2 }}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef>Cost</th>
+          <td mat-cell *matCellDef="let element">₹ {{ element.cost }}</td>
+        </ng-container>
+
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns; sticky: true"
+        ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+  <div class="booking-container">
+    <div class="booking-time-icon-label-container">
+      <div class="icon">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 5.90909C12 9.72727 7 13 7 13C7 13 2 9.72727 2 5.90909C2 4.60712 2.52678 3.35847 3.46447 2.43784C4.40215 1.51721 5.67392 1 7 1C8.32608 1 9.59785 1.51721 10.5355 2.43784C11.4732 3.35847 12 4.60712 12 5.90909Z"
+            stroke="#3B96F3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7 7C7.55228 7 8 6.55228 8 6C8 5.44772 7.55228 5 7 5C6.44772 5 6 5.44772 6 6C6 6.55228 6.44772 7 7 7Z"
+            stroke="#3B96F3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="label">Booking Time</div>
+    </div>
+    <div class="booking-time-input">
+      <mat-form-field appearance="outline">
+        <mat-select>
+          <mat-option *ngFor="let item of getBookingTime" [value]="item.name">
+            <div class="dropdown-container-label">{{ item.name }}</div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="platform-container">
+    <div class="icon-label-header">
+      <div class="icon">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 5.90909C12 9.72727 7 13 7 13C7 13 2 9.72727 2 5.90909C2 4.60712 2.52678 3.35847 3.46447 2.43784C4.40215 1.51721 5.67392 1 7 1C8.32608 1 9.59785 1.51721 10.5355 2.43784C11.4732 3.35847 12 4.60712 12 5.90909Z"
+            stroke="#3B96F3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7 7C7.55228 7 8 6.55228 8 6C8 5.44772 7.55228 5 7 5C6.44772 5 6 5.44772 6 6C6 6.55228 6.44772 7 7 7Z"
+            stroke="#3B96F3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="label">Platform</div>
+    </div>
+    <div class="checkbox-container">
+      <mat-checkbox>RedBus</mat-checkbox>
+      <mat-checkbox>Paytm</mat-checkbox>
+      <mat-checkbox>Offline</mat-checkbox>
+    </div>
+  </div>
+</form>
